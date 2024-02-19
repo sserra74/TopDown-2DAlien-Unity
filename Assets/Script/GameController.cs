@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     private int min, sec; //minuti e secondi del timer
     private float originalFillAmountTimerImage; //valore di riempimento originale dell'immagine (1)
     private float orangeTrigger, redTrigger; //ci dicono il momento in cui deve scattare il nuovo colore dell'immagine
-    private bool orangeColorSetted, redColorSetted; //booleani per capire se è cambiato colore
+    private bool orangeColorSetted, redColorSetted; //booleani per capire se ï¿½ cambiato colore
     private int secondsToSubstract; //i secondi che andranno sotratti al timer
 
     public float timeSettingsInMinutes; //variabile public per far decidere la durata del timer
@@ -74,8 +74,8 @@ public class GameController : MonoBehaviour
     void UpdateTimer()
     {
         /*Otteniamo i minuti: 
-            * timeSettingsInMinutes ci dà il tempo in secondi (ci serve in secondi perché la variabile secondsToSubstract è in secondi)
-            * timeSettingsInMinutes - secondsToSubstract ci dà il tempo rimanente in secondi 
+            * timeSettingsInMinutes ci dï¿½ il tempo in secondi (ci serve in secondi perchï¿½ la variabile secondsToSubstract ï¿½ in secondi)
+            * timeSettingsInMinutes - secondsToSubstract ci dï¿½ il tempo rimanente in secondi 
             * ((timeSettingsInMinutes - secondsToSubstract) / 60f): dividendo per 60 riotteniamo i minuti
             */
         min = Mathf.FloorToInt((timeSettingsInMinutes - secondsToSubstract) / 60f);
@@ -89,7 +89,7 @@ public class GameController : MonoBehaviour
 
         UpdateTimerImage(); //Aggiorno anche la barra del timer
 
-        //Aggiungiamo 1 secondo ogni volta così possiamo utilizzarlo per sottrarre il totale dei secondi dal tempo indicato dall'utente
+        //Aggiungiamo 1 secondo ogni volta cosï¿½ possiamo utilizzarlo per sottrarre il totale dei secondi dal tempo indicato dall'utente
         secondsToSubstract += 1;
 
         //Se il timer va a 0, stoppa il timer e chiama TimeEnd in PlayerController
@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour
     {
 
         /*
-         * (time / (timeSettingsInMinutes): se time è il tempo passato dal momento dell'avvio del timer ad ora (in secondi), e timeSettingsInMinutes * 60f è il tempo indicato dall'inspector 
+         * (time / (timeSettingsInMinutes): se time ï¿½ il tempo passato dal momento dell'avvio del timer ad ora (in secondi), e timeSettingsInMinutes * 60f ï¿½ il tempo indicato dall'inspector 
          * in secondi
          * con l'operazione (secondsToSubstract / (timeSettingsInMinutes * 60f) otteniamo il tempo rimanente
          * Aggiungendo 1 - andiamo a calcolare la percentuale rimanente
@@ -131,13 +131,13 @@ public class GameController : MonoBehaviour
 
     void AssignColor()
     {
-        //Se ancora non è diventata arancione e il suo riempimento è compreso nei suoi 2/3
+        //Se ancora non ï¿½ diventata arancione e il suo riempimento ï¿½ compreso nei suoi 2/3
         if (orangeColorSetted == false && timerImage.fillAmount <= orangeTrigger && timerImage.fillAmount > redTrigger)
         {
             timerImage.color = new Color(1.0f, 0.64f, 0.0f); //arancione
             orangeColorSetted = true;
         }
-        else if (timerImage.fillAmount <= redTrigger) //se il suo riempimento è nell'ultima porzione
+        else if (timerImage.fillAmount <= redTrigger) //se il suo riempimento ï¿½ nell'ultima porzione
         {
             timerImage.color = Color.red;
             redColorSetted = true;
@@ -155,7 +155,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        Debug.Log("GameeOver");
     }
 
 
