@@ -155,7 +155,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("GameeOver");
+        Debug.Log("Game Over");
     }
 
 
