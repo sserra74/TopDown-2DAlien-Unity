@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(!rb.isKinematic)
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
+            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
     }
 
     public void TimeEnd()
