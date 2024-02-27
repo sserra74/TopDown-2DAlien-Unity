@@ -14,11 +14,6 @@ public class ProjectileController : MonoBehaviour
         rb.velocity = transform.forward * projectileSpeed;
     }
 
-    void Update()
-    {
-        
-    }
-
     void LifespanEnd(){
         GetComponent<SpriteRenderer>().enabled = false;
         GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
