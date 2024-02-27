@@ -6,10 +6,12 @@ public class ProjectileController : MonoBehaviour
 {
     public GameObject explosionEffect;
     Rigidbody2D rb;
+    public float projectileSpeed;
     void Start()
     {
         Invoke("LifespanEnd", 3f);
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.forward * projectileSpeed;
     }
 
     void Update()
